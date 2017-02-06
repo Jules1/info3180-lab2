@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <style type='text/css'>
+        p{
+            background-color:white;
+            width:495px;
+            padding-left:5px;
+            
+        }
+        b{
+            padding-bottom:2px;
+        }
+        
+        .top{
+            font-size: 35px;
+            font-style: bold;
+            border-bottom: 2px solid gray;
+            margin-bottom:15px;
+        }
+        img{
+            float:left;
+        }
+        
+        .info{
+            background-color: AliceBlue;
+            height:auto;
+            width:500px;
+            float:right;
+            border:3px solid gray;
+            border-radius: 25px;
+        }
+        
+        .name{
+            background-color: AliceBlue;
+            padding-bottom:5px;
+            padding-top:5px;
+            border-bottom:1px solid gray;
+            margin-bottom:0px;
+        }
+        
+        .date{
+            background-color:white;
+            padding-top:10px;
+            padding-bottom:10px;
+            border-bottom:1px solid gray;
+            margin-top:0px;
+            margin-bottom:0px;
+        }
+        .addInfo{
+            background-color: AliceBlue;
+        }
+        .genInfo{
+            margin-top:0px;
+            margin-bottom:0px;
+            border-bottom:1px solid gray;
+        }
+        
+    </style>
+{% endblock %}
+
+{% block main %}   
+    <body>
+        <div class="top">Profile</div>
+        
+        <img src="{{url_for('/static', filename='clay.png')}}" width="400" height="400">
+        
+        <div class="info">
+            <p class="name">Clay Puppington</p>
+            <p class="date">Today's date is {{date}}</p>
+            <p class = genInfo><b>Username: </b>ClayPup<br><b>ID Number: </b>620052447<br><b>Age: </b>40<br><b>Gender: </b>Male<br></p>
+            <p class="addInfo">Mayor of Moralton</p>
+        </div>
+        
+    </body>
+{% endblock %}
