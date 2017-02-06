@@ -52,16 +52,23 @@ def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
     
-@app.route("/profile")
+@app.route('/profile')
 def profile():
-    return render_template('profile.html')
+    name = "Clay Puppington"
+    id = "620052447"
+    usrName = "ClayPup"
+    age = 40
+    gender = "Male"
+    addInfo = "Mayor of Moralton"
+    date = timeinfo()
+    return render_template("profile.html", name = name, id = id, usrName = usrName, age = age, gender = gender, addInfo = addInfo, date = date)
 
-@app.route("/profile")
+@app.route('/profile')
 def timeinfo():
     import time
-    now = time.strftime("%c")
-    dateFormat = "Current date and time " + time.strftime("%c")
-    return render_template('profile.html', date = dateFormat)
+    now = time.strftime("%c") 
+    dateFormat = "Today's Date is {0}".format(time.strftime("%c"))
+    return dateFormat
 
 
 if __name__ == '__main__':

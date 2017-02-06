@@ -26,7 +26,8 @@
             background-color: AliceBlue;
             height:auto;
             width:500px;
-            float:right;
+            left:450px;
+            position:absolute;
             border:3px solid gray;
             border-radius: 25px;
         }
@@ -60,17 +61,14 @@
 {% endblock %}
 
 {% block main %}   
-    <body>
-        <div class="top">Profile</div>
-        
-        <img src="{{url_for('/static', filename='clay.png')}}" width="400" height="400">
-        
-        <div class="info">
-            <p class="name">Clay Puppington</p>
-            <p class="date">Today's date is {{date}}</p>
-            <p class = genInfo><b>Username: </b>ClayPup<br><b>ID Number: </b>620052447<br><b>Age: </b>40<br><b>Gender: </b>Male<br></p>
-            <p class="addInfo">Mayor of Moralton</p>
-        </div>
-        
-    </body>
+    <div class="top">Profile</div>
+    
+    <img src="{{url_for('static', filename='clay.png')}}" width="400" height="400">
+    
+    <div class="info">
+        <p class="name">{{ name }}</p>
+        <p class="date">{{ date }}</p>
+        <p class = genInfo><b>Username: </b>{{ usrName }}<br><b>ID Number: </b>{{ id }}<br><b>Age: </b>{{ age }}<br><b>Gender: </b>{{ gender }}<br></p>
+        <p class="addInfo">{{ addInfo }}</p>
+    </div>
 {% endblock %}
